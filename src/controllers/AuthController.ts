@@ -9,7 +9,7 @@ dotenv.config()
 
 // Token Auth
 passport.use(new JwtStrategy({
-    secretOrKey: process.env.API_KEY,
+    secretOrKey: process.env.API_KEY || 'SECRET',
     jwtFromRequest:ExtractJwt.fromHeader('authorization')
 }, async (payload, done) =>{
     try {
